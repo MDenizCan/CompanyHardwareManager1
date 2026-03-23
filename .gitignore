@@ -1,0 +1,62 @@
+# ------------------------------------------------------------------------------
+# .NET Core / Visual Studio .gitignore
+# ------------------------------------------------------------------------------
+
+# BUIDL KLASÖRLERİ (Asla Git'e gitmemesi gereken derlenmiş dosyalar)
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+TestResults/
+
+# VISUAL STUDIO KULLANICI AYARLARI
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vsix
+*.vssscc
+*.vshost.exe
+*.vshost.exe.config
+*.vshost.exe.manifest
+
+# RIDER (JetBrains) IDE AYARLARI
+.idea/
+*.sln.iml
+
+# VS CODE AYARLARI
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# LOG VE TEMP DOSYALARI
+*.log
+*.err
+*.cache
+*.tmp
+*.bak
+
+# İŞLETİM SİSTEMİ DOSYALARI (Mac / Windows gizli dosyaları)
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# VERİTABANI İLE İLGİLİ DOSYALAR (LocalDB / SQLite / SQL Server)
+*.mdf
+*.ldf
+*.ndf
+*.sqlite
+*.db
+
+# APPSETTINGS GİZLİ MASAÜSTÜ DOSYALARI (Geliştirme Ortamı)
+# Bağlantı cümleleri ve JWT şifreleri bulunduğu için Development ortamı Git'e atılmamalıdır
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+
+# UYGULAMA PAKETLERİ VE LİNK KLASÖRLERİ
+packages/
+node_modules/
+bower_components/
