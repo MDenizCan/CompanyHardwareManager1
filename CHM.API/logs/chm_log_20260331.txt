@@ -1,0 +1,281 @@
+2026-03-31 14:56:10.790 +03:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at CHM.API.Program.Main(String[] args) in C:\Users\forra\APROGRAMMING\CompanyHardwareManager\CHM.API\Program.cs:line 110
+2026-03-31 14:56:32.144 +03:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at CHM.API.Program.Main(String[] args) in C:\Users\forra\APROGRAMMING\CompanyHardwareManager\CHM.API\Program.cs:line 110
+2026-03-31 15:01:48.249 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.325 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.333 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.348 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.428 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.435 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.440 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.443 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.447 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.450 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.453 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.463 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.479 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.483 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.486 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.489 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.493 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:01:48.584 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 450), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 450), @p13='?' (DbType = DateTime2), @p14='?' (DbType = Guid), @p15='?' (DbType = DateTime2), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 450), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = DateTime2), @p24='?' (Size = 4000), @p25='?' (DbType = Boolean), @p26='?' (Size = 450), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Guid), @p29='?' (DbType = DateTime2), @p30='?' (DbType = DateTime2), @p31='?' (Size = 4000), @p32='?' (DbType = Boolean), @p33='?' (Size = 450), @p34='?' (DbType = DateTime2), @p35='?' (DbType = Guid), @p36='?' (DbType = DateTime2), @p37='?' (DbType = DateTime2), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 450), @p41='?' (DbType = DateTime2), @p42='?' (DbType = Guid), @p43='?' (DbType = DateTime2), @p44='?' (DbType = DateTime2), @p45='?' (Size = 4000), @p46='?' (DbType = Boolean), @p47='?' (Size = 450), @p48='?' (DbType = DateTime2), @p49='?' (DbType = Guid), @p50='?' (DbType = DateTime2), @p51='?' (DbType = DateTime2), @p52='?' (Size = 4000), @p53='?' (DbType = Boolean), @p54='?' (Size = 450), @p55='?' (DbType = DateTime2), @p56='?' (DbType = Guid), @p57='?' (DbType = DateTime2), @p58='?' (DbType = DateTime2), @p59='?' (Size = 4000), @p60='?' (DbType = Boolean), @p61='?' (Size = 450), @p62='?' (DbType = DateTime2), @p63='?' (DbType = Guid), @p64='?' (DbType = DateTime2), @p65='?' (DbType = DateTime2), @p66='?' (Size = 4000), @p67='?' (DbType = Boolean), @p68='?' (Size = 450), @p69='?' (DbType = DateTime2), @p70='?' (DbType = Guid), @p71='?' (DbType = DateTime2), @p72='?' (DbType = DateTime2), @p73='?' (Size = 4000), @p74='?' (DbType = Boolean), @p75='?' (Size = 450), @p76='?' (DbType = DateTime2), @p77='?' (DbType = Guid), @p78='?' (DbType = DateTime2), @p79='?' (DbType = DateTime2), @p80='?' (Size = 4000), @p81='?' (DbType = Boolean), @p82='?' (Size = 450), @p83='?' (DbType = DateTime2), @p84='?' (DbType = Guid), @p85='?' (DbType = DateTime2), @p86='?' (DbType = DateTime2), @p87='?' (Size = 4000), @p88='?' (DbType = Boolean), @p89='?' (Size = 450), @p90='?' (DbType = DateTime2), @p91='?' (DbType = Guid), @p92='?' (DbType = DateTime2), @p93='?' (DbType = DateTime2), @p94='?' (Size = 4000), @p95='?' (DbType = Boolean), @p96='?' (Size = 450), @p97='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AssetCategories] ([Id], [CreatedAt], [DeletedAt], [Description], [IsDeleted], [Name], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6),
+(@p7, @p8, @p9, @p10, @p11, @p12, @p13),
+(@p14, @p15, @p16, @p17, @p18, @p19, @p20),
+(@p21, @p22, @p23, @p24, @p25, @p26, @p27),
+(@p28, @p29, @p30, @p31, @p32, @p33, @p34),
+(@p35, @p36, @p37, @p38, @p39, @p40, @p41),
+(@p42, @p43, @p44, @p45, @p46, @p47, @p48),
+(@p49, @p50, @p51, @p52, @p53, @p54, @p55);
+INSERT INTO [Departments] ([Id], [CreatedAt], [DeletedAt], [Description], [IsDeleted], [Name], [UpdatedAt])
+VALUES (@p56, @p57, @p58, @p59, @p60, @p61, @p62),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69),
+(@p70, @p71, @p72, @p73, @p74, @p75, @p76),
+(@p77, @p78, @p79, @p80, @p81, @p82, @p83),
+(@p84, @p85, @p86, @p87, @p88, @p89, @p90),
+(@p91, @p92, @p93, @p94, @p95, @p96, @p97);
+2026-03-31 15:01:48.744 +03:00 [INF] User profile is available. Using 'C:\Users\forra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-31 15:01:48.917 +03:00 [INF] Now listening on: http://localhost:5075
+2026-03-31 15:01:48.921 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-31 15:01:48.922 +03:00 [INF] Hosting environment: Development
+2026-03-31 15:01:48.922 +03:00 [INF] Content root path: C:\Users\forra\APROGRAMMING\CompanyHardwareManager\CHM.API
+2026-03-31 15:05:40.207 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5075/swagger/index.html - null null
+2026-03-31 15:05:40.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5075/swagger/index.html - 200 null text/html;charset=utf-8 109.3445ms
+2026-03-31 15:08:05.806 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5075/api/Auth/register - application/json 119
+2026-03-31 15:08:05.826 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-03-31 15:08:05.892 +03:00 [INF] Executing endpoint 'CHM.API.Controllers.AuthController.Register (CHM.API)'
+2026-03-31 15:08:05.924 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CHM.MODELS.Auth.RegisterRequest, System.Threading.CancellationToken) on controller CHM.API.Controllers.AuthController (CHM.API).
+2026-03-31 15:08:06.083 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Username] = @__username_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:08:06.095 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-31 15:08:06.150 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[DeletedAt], [r].[IsDeleted], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[IsDeleted] = CAST(0 AS bit) AND [r].[Name] = @__roleName_0
+2026-03-31 15:08:06.254 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 450), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 450), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreatedAt], [DeletedAt], [DepartmentId], [Email], [IsActive], [IsDeleted], [PasswordHash], [UpdatedAt], [Username])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+INSERT INTO [UserRoles] ([RoleId], [UserId])
+VALUES (@p10, @p11);
+2026-03-31 15:08:06.264 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-03-31 15:08:06.269 +03:00 [INF] Executed action CHM.API.Controllers.AuthController.Register (CHM.API) in 337.7864ms
+2026-03-31 15:08:06.271 +03:00 [INF] Executed endpoint 'CHM.API.Controllers.AuthController.Register (CHM.API)'
+2026-03-31 15:08:06.276 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5075/api/Auth/register - 204 null null 469.9061ms
+2026-03-31 15:08:06.284 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5075/api/Auth/login - application/json 82
+2026-03-31 15:08:06.291 +03:00 [INF] Executing endpoint 'CHM.API.Controllers.AuthController.Login (CHM.API)'
+2026-03-31 15:08:06.296 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CHM.MODELS.Auth.TokenResponse]] Login(CHM.MODELS.Auth.LoginRequest, System.Threading.CancellationToken) on controller CHM.API.Controllers.AuthController (CHM.API).
+2026-03-31 15:08:06.433 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__usernameOrEmail_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedAt], [t].[DeletedAt], [t].[DepartmentId], [t].[Email], [t].[IsActive], [t].[IsDeleted], [t].[PasswordHash], [t].[UpdatedAt], [t].[Username], [t1].[UserId], [t1].[RoleId], [t1].[Id], [t1].[CreatedAt], [t1].[DeletedAt], [t1].[IsDeleted], [t1].[Name], [t1].[UpdatedAt], [t1].[Id0]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[DeletedAt], [u].[DepartmentId], [u].[Email], [u].[IsActive], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ([u].[Username] = @__usernameOrEmail_0 OR [u].[Email] = @__usernameOrEmail_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [t2].[Id], [t2].[CreatedAt], [t2].[DeletedAt], [t2].[IsDeleted], [t2].[Name], [t2].[UpdatedAt], [t0].[Id] AS [Id0]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN (
+        SELECT [u1].[Id], [u1].[IsDeleted]
+        FROM [Users] AS [u1]
+        WHERE [u1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t0] ON [u0].[UserId] = [t0].[Id]
+    INNER JOIN (
+        SELECT [r].[Id], [r].[CreatedAt], [r].[DeletedAt], [r].[IsDeleted], [r].[Name], [r].[UpdatedAt]
+        FROM [Roles] AS [r]
+        WHERE [r].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2] ON [u0].[RoleId] = [t2].[Id]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit) AND [t2].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[Id] = [t1].[UserId]
+ORDER BY [t].[Id], [t1].[UserId], [t1].[RoleId], [t1].[Id0]
+2026-03-31 15:08:06.491 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [DeletedAt], [ExpiresAt], [IsDeleted], [RevokedAt], [Token], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-03-31 15:08:06.519 +03:00 [INF] Executing OkObjectResult, writing value of type 'CHM.MODELS.Auth.TokenResponse'.
+2026-03-31 15:08:06.532 +03:00 [INF] Executed action CHM.API.Controllers.AuthController.Login (CHM.API) in 233.2898ms
+2026-03-31 15:08:06.534 +03:00 [INF] Executed endpoint 'CHM.API.Controllers.AuthController.Login (CHM.API)'
+2026-03-31 15:08:06.535 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5075/api/Auth/login - 200 null application/json; charset=utf-8 251.0723ms
+2026-03-31 15:08:06.542 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5075/api/Request/my-requests?pageNumber=1&pageSize=10 - null null
+2026-03-31 15:08:06.590 +03:00 [INF] Executing endpoint 'CHM.API.Controllers.RequestController.GetMyRequests (CHM.API)'
+2026-03-31 15:08:06.597 +03:00 [INF] Route matched with {action = "GetMyRequests", controller = "Request"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CHM.MODELS.Common.PagedResponse`1[CHM.MODELS.Request.RequestResponseDto]]] GetMyRequests(CHM.MODELS.Common.PaginationFilter, System.Threading.CancellationToken) on controller CHM.API.Controllers.RequestController (CHM.API).
+2026-03-31 15:08:06.713 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Requests] AS [r]
+WHERE [r].[IsDeleted] = CAST(0 AS bit) AND [r].[UserId] = @__userId_0
+2026-03-31 15:08:06.760 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssetId], [t].[CreatedAt], [t].[DeletedAt], [t].[Description], [t].[IsDeleted], [t].[Status], [t].[Type], [t].[UpdatedAt], [t].[UserId], [t0].[Id], [t0].[CreatedAt], [t0].[DeletedAt], [t0].[DepartmentId], [t0].[Email], [t0].[IsActive], [t0].[IsDeleted], [t0].[PasswordHash], [t0].[UpdatedAt], [t0].[Username], [t1].[Id], [t1].[CategoryId], [t1].[CreatedAt], [t1].[DeletedAt], [t1].[Description], [t1].[IsDeleted], [t1].[Name], [t1].[SerialNumber], [t1].[Status], [t1].[UpdatedAt]
+FROM (
+    SELECT [r].[Id], [r].[AssetId], [r].[CreatedAt], [r].[DeletedAt], [r].[Description], [r].[IsDeleted], [r].[Status], [r].[Type], [r].[UpdatedAt], [r].[UserId]
+    FROM [Requests] AS [r]
+    WHERE [r].[IsDeleted] = CAST(0 AS bit) AND [r].[UserId] = @__userId_0
+    ORDER BY [r].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN (
+    SELECT [u].[Id], [u].[CreatedAt], [u].[DeletedAt], [u].[DepartmentId], [u].[Email], [u].[IsActive], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[UserId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[CategoryId], [a].[CreatedAt], [a].[DeletedAt], [a].[Description], [a].[IsDeleted], [a].[Name], [a].[SerialNumber], [a].[Status], [a].[UpdatedAt]
+    FROM [Assets] AS [a]
+    WHERE [a].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[AssetId] = [t1].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2026-03-31 15:08:06.777 +03:00 [INF] Executing OkObjectResult, writing value of type 'CHM.MODELS.Common.PagedResponse`1[[CHM.MODELS.Request.RequestResponseDto, CHM.MODELS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-31 15:08:06.794 +03:00 [INF] Executed action CHM.API.Controllers.RequestController.GetMyRequests (CHM.API) in 194.0026ms
+2026-03-31 15:08:06.797 +03:00 [INF] Executed endpoint 'CHM.API.Controllers.RequestController.GetMyRequests (CHM.API)'
+2026-03-31 15:08:06.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5075/api/Request/my-requests?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 256.6798ms

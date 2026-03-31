@@ -3,6 +3,8 @@ using FluentValidation;
 
 namespace CHM.API.Validators;
 
+// API'ye gelen CreateAssetRequest (Yeni Cihaz Kaydı) verilerinin doğruluğunu (Boş olmaması, uzunluğu vb.) kontrol eden sınıf.
+// İlgili Controller metoduna girmeden önce çalışır ve kurallara uymayan istekleri 400 Bad Request olarak reddeder.
 public sealed class CreateAssetRequestValidator : AbstractValidator<CreateAssetRequest>
 {
     public CreateAssetRequestValidator()

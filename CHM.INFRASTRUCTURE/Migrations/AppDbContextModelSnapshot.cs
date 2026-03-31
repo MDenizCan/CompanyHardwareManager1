@@ -28,6 +28,9 @@ namespace CHM.INFRASTRUCTURE.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -56,10 +59,45 @@ namespace CHM.INFRASTRUCTURE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
                     b.ToTable("Assets");
+                });
+
+            modelBuilder.Entity("CHM.ENTITIES.Entities.AssetCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("AssetCategories");
                 });
 
             modelBuilder.Entity("CHM.ENTITIES.Entities.Assignment", b =>
@@ -106,6 +144,39 @@ namespace CHM.INFRASTRUCTURE.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Assignments");
+                });
+
+            modelBuilder.Entity("CHM.ENTITIES.Entities.Department", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("CHM.ENTITIES.Entities.RefreshToken", b =>
@@ -234,6 +305,9 @@ namespace CHM.INFRASTRUCTURE.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("DepartmentId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -257,6 +331,8 @@ namespace CHM.INFRASTRUCTURE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.HasIndex("Email")
                         .IsUnique();
 
@@ -279,6 +355,16 @@ namespace CHM.INFRASTRUCTURE.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("CHM.ENTITIES.Entities.Asset", b =>
+                {
+                    b.HasOne("CHM.ENTITIES.Entities.AssetCategory", "Category")
+                        .WithMany("Assets")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("CHM.ENTITIES.Entities.Assignment", b =>
@@ -335,6 +421,16 @@ namespace CHM.INFRASTRUCTURE.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CHM.ENTITIES.Entities.User", b =>
+                {
+                    b.HasOne("CHM.ENTITIES.Entities.Department", "Department")
+                        .WithMany("Users")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Department");
+                });
+
             modelBuilder.Entity("CHM.ENTITIES.Entities.UserRole", b =>
                 {
                     b.HasOne("CHM.ENTITIES.Entities.Role", "Role")
@@ -359,6 +455,16 @@ namespace CHM.INFRASTRUCTURE.Migrations
                     b.Navigation("Assignments");
 
                     b.Navigation("Requests");
+                });
+
+            modelBuilder.Entity("CHM.ENTITIES.Entities.AssetCategory", b =>
+                {
+                    b.Navigation("Assets");
+                });
+
+            modelBuilder.Entity("CHM.ENTITIES.Entities.Department", b =>
+                {
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("CHM.ENTITIES.Entities.Role", b =>

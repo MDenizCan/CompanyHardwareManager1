@@ -10,27 +10,41 @@ public static class DatabaseSeeder
     // Sistemde her zaman bulunması gereken 3 temel rol.
     private static readonly string[] DefaultRoles = ["Admin", "IT", "Employee"];
 
+    // Sistemde her zaman bulunması gereken varsayılan cihaz kategorileri.
+    private static readonly string[] DefaultCategories = ["Laptop", "Monitor", "Desktop", "Phone", "Tablet", "Keyboard", "Mouse", "Other"];
+
+    // Sistemde her zaman bulunması gereken varsayılan departmanlar.
+    private static readonly string[] DefaultDepartments = ["IT", "HR", "Finance", "Sales", "Operations", "Management"];
+
     public static async Task SeedAsync(AppDbContext db, CancellationToken cancellationToken = default)
     {
         // Her bir rol için veritabanında olup olmadığını kontrol edeceğiz.
         foreach (var roleName in DefaultRoles)
         {
-            // IgnoreQueryFilters() KULLANIMI ÇOK ÖNEMLİ:
-            // Eğer bunu kullanmazsak ve rol daha önce silinmişse (IsDeleted = true),
-            // AnyAsync onu görmez ve yeni bir tane eklemeye çalışarak veritabanında
-            // Unique Index (benzersiz isim) hatasına sebep olur.
             var exists = await db.Roles.IgnoreQueryFilters().AnyAsync(r => r.Name == roleName, cancellationToken);
-            
-            // Eğer rol veritabanında HİÇ yoksa (ne silinmiş ne de aktif olarak), o zaman yeni oluştur ve ekle.
             if (!exists)
             {
-                db.Roles.Add(new Role
-                {
-                    Id = Guid.NewGuid(),
-                    Name = roleName,
-                    CreatedAt = DateTime.UtcNow,
-                    IsDeleted = false
-                });
+                db.Roles.Add(new Role { Id = Guid.NewGuid(), Name = roleName, CreatedAt = DateTime.UtcNow, IsDeleted = false });
+            }
+        }
+
+        // Her bir cihaz kategorisi için kontrol.
+        foreach (var categoryName in DefaultCategories)
+        {
+            var exists = await db.AssetCategories.IgnoreQueryFilters().AnyAsync(c => c.Name == categoryName, cancellationToken);
+            if (!exists)
+            {
+                db.AssetCategories.Add(new AssetCategory { Id = Guid.NewGuid(), Name = categoryName, CreatedAt = DateTime.UtcNow, IsDeleted = false });
+            }
+        }
+
+        // Her bir departman için kontrol.
+        foreach (var departmentName in DefaultDepartments)
+        {
+            var exists = await db.Departments.IgnoreQueryFilters().AnyAsync(d => d.Name == departmentName, cancellationToken);
+            if (!exists)
+            {
+                db.Departments.Add(new Department { Id = Guid.NewGuid(), Name = departmentName, CreatedAt = DateTime.UtcNow, IsDeleted = false });
             }
         }
 

@@ -3,6 +3,7 @@ using FluentValidation;
 
 namespace CHM.API.Validators;
 
+// Şifre değiştirme isteği sırasında eski ve yeni şifrelerin kurallara uygunluğunu kontrol eden sınıf.
 public sealed class ChangePasswordRequestValidator : AbstractValidator<ChangePasswordRequest>
 {
     public ChangePasswordRequestValidator()

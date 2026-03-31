@@ -6,6 +6,7 @@ using System.Security.Claims;
 
 namespace CHM.API.Controllers;
 
+// Kullanıcıların sisteme giriş yaptığı, kaydolduğu ve token(anahtar) aldığı kimlik doğrulama uç noktası.
 [ApiController]
 [Route("api/[controller]")]
 public sealed class AuthController : ControllerBase
@@ -17,6 +18,8 @@ public sealed class AuthController : ControllerBase
         _auth = auth;
     }
 
+    // Yeni kullanıcıların sisteme kayıt olduğu API ucu. 
+    // [AllowAnonymous] ile bu metoda herkesin (Token olmadan) erişebilmesini sağlar. (Method: POST /api/auth/register)
     [HttpPost("register")]
     [AllowAnonymous]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request, CancellationToken cancellationToken)
@@ -32,6 +35,7 @@ public sealed class AuthController : ControllerBase
         }
     }
 
+    // E-posta veya kullanıcı adı ile giriş yapılarak JWT (Access ve Refresh Token) almanızı sağlayan API ucu. (Method: POST /api/auth/login)
     [HttpPost("login")]
     [AllowAnonymous]
     public async Task<ActionResult<TokenResponse>> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)
@@ -47,6 +51,8 @@ public sealed class AuthController : ControllerBase
         }
     }
 
+    // Mevcut Access Token'ın süresi (15 dk) bittiğinde kullanıcıdan tekrar şifre istememek için 
+    // eldeki uzun süreli (7 Gün) Refresh Token'ı verip her iki token'ı da yeniler. (Method: POST /api/auth/refresh)
     [HttpPost("refresh")]
     [AllowAnonymous]
     public async Task<ActionResult<TokenResponse>> Refresh([FromBody] RefreshTokenRequest request, CancellationToken cancellationToken)
@@ -62,6 +68,8 @@ public sealed class AuthController : ControllerBase
         }
     }
 
+    // Sisteme giriş yapmış mevcut kullanıcının şifresini değiştirmek için kullanılır.
+    // [Authorize] sadece Login olmuş (elinde Token olan) kişilerin girmesini zorunlu kılar. (Method: POST /api/auth/change-password)
     [HttpPost("change-password")]
     [Authorize]
     public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request, CancellationToken cancellationToken)

@@ -2,12 +2,15 @@ using System.Security.Cryptography;
 
 namespace CHM.BLL.Services;
 
+// Kullanıcı şifrelerini veritabanına kaydetmeden önce güvenli bir şekilde şifrelemek (Hash'lemek) 
+// ve giriş yaparken doğrulamasını (Verify) yapmak için kullanılan yardımcı sınıf.
 public static class PasswordHasher
 {
     private const int SaltSize = 16; // 128-bit
     private const int KeySize = 32;  // 256-bit
     private const int DefaultIterations = 100_000;
 
+    // Şifreyi PBKDF2 algoritmasını kullanarak (binlerce kez karma işleminden geçirerek) şifreler.
     // Format: PBKDF2$<iterations>$<saltBase64>$<keyBase64>
     public static string Hash(string password, int iterations = DefaultIterations)
     {
@@ -22,6 +25,7 @@ public static class PasswordHasher
         return $"PBKDF2${iterations}${Convert.ToBase64String(salt)}${Convert.ToBase64String(key)}";
     }
 
+    // Kullanıcının girdiği düz şifre ile veritabanındaki şifrelenmiş Hash verisini karşılaştırır.
     public static bool Verify(string password, string storedHash)
     {
         if (string.IsNullOrWhiteSpace(storedHash)) return false;

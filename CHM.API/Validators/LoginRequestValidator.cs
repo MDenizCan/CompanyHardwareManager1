@@ -3,6 +3,7 @@ using FluentValidation;
 
 namespace CHM.API.Validators;
 
+// Kullanıcının Login (Giriş) yaparken gönderdiği bilgilerin basit geçerlilik kontrolünü yapan sınıf.
 public sealed class LoginRequestValidator : AbstractValidator<LoginRequest>
 {
     public LoginRequestValidator()

@@ -3,6 +3,7 @@ using FluentValidation;
 
 namespace CHM.API.Validators;
 
+// Sisteme yeni kayıt olan kullanıcının seçtiği E-posta, Şifre ve Kullanıcı Adı kurallarını kontrol eden sınıf.
 public sealed class RegisterRequestValidator : AbstractValidator<RegisterRequest>
 {
     public RegisterRequestValidator()

@@ -4,6 +4,7 @@ using FluentValidation;
 
 namespace CHM.API.Validators;
 
+// API'ye gelen UpdateAssetRequest (Cihaz Güncelleme) verilerinin doğruluğunu kontrol eden sınıf.
 public sealed class UpdateAssetRequestValidator : AbstractValidator<UpdateAssetRequest>
 {
     public UpdateAssetRequestValidator()

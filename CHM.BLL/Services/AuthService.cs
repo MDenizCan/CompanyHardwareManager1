@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace CHM.BLL.Services;
 
+// Kullanıcı doğrulama (Kayıt olma, Giriş yapma, Şifre değiştirme vb.) süreçlerini (Business Logic) yürüten servis.
 public sealed class AuthService : IAuthService
 {
     private readonly IUserRepository _users;
@@ -26,6 +27,7 @@ public sealed class AuthService : IAuthService
         _jwt = jwtOptions.Value;
     }
 
+    // Sisteme yeni bir kullanıcı kaydeder. Kullanıcı adı ve e-posta benzersizliğini kontrol eder.
     public async Task RegisterAsync(RegisterRequest request, CancellationToken cancellationToken = default)
     {
         if (await _users.UsernameExistsAsync(request.Username, cancellationToken))
@@ -48,6 +50,7 @@ public sealed class AuthService : IAuthService
         await _users.SaveChangesAsync(cancellationToken);
     }
 
+    // Kullanıcı adı/E-posta ve şifre ile giriş yapılmasını sağlar. Başarılıysa Access ve Refresh Token çiftini döner.
     public async Task<TokenResponse> LoginAsync(LoginRequest request, CancellationToken cancellationToken = default)
     {
         var user = await _users.GetByUsernameOrEmailAsync(request.UsernameOrEmail.Trim(), includeRoles: true, cancellationToken);
@@ -70,6 +73,7 @@ public sealed class AuthService : IAuthService
         return accessPair;
     }
 
+    // Süresi dolan Access Token'ı yenilemek için eldeki Refresh Token'ı kullanır.
     public async Task<TokenResponse> RefreshAsync(RefreshTokenRequest request, CancellationToken cancellationToken = default)
     {
         var existing = await _refreshTokens.GetByTokenAsync(request.RefreshToken.Trim(), includeUserAndRoles: true, cancellationToken);
@@ -92,6 +96,7 @@ public sealed class AuthService : IAuthService
         return pair;
     }
 
+    // Kullanıcının mevcut şifresini kontrol ederek yeni bir şifreyle günceller.
     public async Task ChangePasswordAsync(Guid userId, ChangePasswordRequest request, CancellationToken cancellationToken = default)
     {
         var user = await _users.GetByIdAsync(userId, includeRoles: false, cancellationToken);

@@ -1,13 +1,15 @@
 using CHM.BLL.Interfaces;
 using CHM.MODELS.Asset;
+using CHM.MODELS.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CHM.API.Controllers;
 
+// Dış dünyaya (Frontend/Mobil) açılan kapı (Endpoint). Cihaz (Asset) işlemleri bu kontrolcü üzerinden yapılır.
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Admin,IT")]
+[Authorize(Roles = "Admin,IT")] // Sadece Admin ve IT rolündeki (yetkili) kişiler bu sınıftaki işlemleri yapabilir.
 public sealed class AssetController : ControllerBase
 {
     private readonly IAssetService _assetService;
@@ -17,13 +19,16 @@ public sealed class AssetController : ControllerBase
         _assetService = assetService;
     }
 
+    // Sistemdeki tüm cihazları listeleyen metod.
+    // Metod: GET /api/asset
     [HttpGet]
-    public async Task<ActionResult<List<AssetListResponse>>> GetAll(CancellationToken cancellationToken)
+    public async Task<ActionResult<PagedResponse<AssetListResponse>>> GetAll([FromQuery] PaginationFilter filter, CancellationToken cancellationToken)
     {
-        var assets = await _assetService.GetAllAsync(cancellationToken);
-        return Ok(assets);
+        var results = await _assetService.GetAllAsync(filter, cancellationToken);
+        return Ok(results);
     }
 
+    // ID'si verilen özel bir cihazın, bütün detaylarıyla bilgisini döner. (Method: GET /api/asset/{id})
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<AssetResponse>> GetById(Guid id, CancellationToken cancellationToken)
     {
@@ -38,6 +43,7 @@ public sealed class AssetController : ControllerBase
         }
     }
 
+    // Sisteme yepyeni bir cihaz kaydeder. 201 Created döner ve yeni cihazın ID'sini Header'a yazar. (Method: POST /api/asset)
     [HttpPost]
     public async Task<ActionResult<AssetResponse>> Create([FromBody] CreateAssetRequest request, CancellationToken cancellationToken)
     {
@@ -52,6 +58,7 @@ public sealed class AssetController : ControllerBase
         }
     }
 
+    // Mevcut bir cihazın (İsim, Durum, Seri No vb.) bilgilerini tamamen günceller. (Method: PUT /api/asset/{id})
     [HttpPut("{id:guid}")]
     public async Task<ActionResult<AssetResponse>> Update(Guid id, [FromBody] UpdateAssetRequest request, CancellationToken cancellationToken)
     {
@@ -70,6 +77,7 @@ public sealed class AssetController : ControllerBase
         }
     }
 
+    // Cihazı sistemden (Soft Delete mantığıyla) siler. Başarılıysa içeriksiz 204 NoContent döner. (Method: DELETE /api/asset/{id})
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {

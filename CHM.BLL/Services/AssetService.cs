@@ -2,9 +2,12 @@ using AutoMapper;
 using CHM.BLL.Interfaces;
 using CHM.ENTITIES.Entities;
 using CHM.MODELS.Asset;
+using CHM.MODELS.Common;
 
 namespace CHM.BLL.Services;
 
+// Cihazlarla (Asset) ilgili tüm iş kurallarının (Business Logic) işletildiği ana servis.
+// Controller'lar doğrudan Repository ile konuşmaz, bu servis aracılığıyla veriye erişir.
 public sealed class AssetService : IAssetService
 {
     private readonly IAssetRepository _assets;
@@ -16,6 +19,7 @@ public sealed class AssetService : IAssetService
         _mapper = mapper;
     }
 
+    // Verilen ID'ye göre cihazı bulur, bulamazsa hata fırlatır ve DTO'ya (AssetResponse) çevirerek döner.
     public async Task<AssetResponse> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var asset = await _assets.GetByIdAsync(id, cancellationToken)
@@ -24,12 +28,15 @@ public sealed class AssetService : IAssetService
         return _mapper.Map<AssetResponse>(asset);
     }
 
-    public async Task<List<AssetListResponse>> GetAllAsync(CancellationToken cancellationToken = default)
+    // Tüm cihazları DTO modeline (AssetListResponse) çevirerek gönderir. Pagination içerir.
+    public async Task<PagedResponse<AssetListResponse>> GetAllAsync(PaginationFilter filter, CancellationToken cancellationToken = default)
     {
-        var assets = await _assets.GetAllAsync(cancellationToken);
-        return _mapper.Map<List<AssetListResponse>>(assets);
+        var (items, totalCount) = await _assets.GetAllAsync(filter, cancellationToken);
+        var mappedData = _mapper.Map<List<AssetListResponse>>(items);
+        return new PagedResponse<AssetListResponse>(mappedData, totalCount, filter.PageNumber, filter.PageSize);
     }
 
+    // Yeni cihaz eklemek için gerekli iş kurallarını işletir (Örn: Benzersiz Seri Numarası kontrolü).
     public async Task<AssetResponse> CreateAsync(CreateAssetRequest request, CancellationToken cancellationToken = default)
     {
         if (await _assets.SerialNumberExistsAsync(request.SerialNumber.Trim(), cancellationToken: cancellationToken))
@@ -41,6 +48,7 @@ public sealed class AssetService : IAssetService
             Name = request.Name.Trim(),
             SerialNumber = request.SerialNumber.Trim(),
             Description = request.Description?.Trim(),
+            CategoryId = request.CategoryId,
             Status = AssetStatus.Available,
             CreatedAt = DateTime.UtcNow
         };
@@ -51,6 +59,7 @@ public sealed class AssetService : IAssetService
         return _mapper.Map<AssetResponse>(asset);
     }
 
+    // Mevcut bir cihazı günceller. Yine seri numarası çakışmalarını ve uygun durum (Enum) değerlerini kontrol eder.
     public async Task<AssetResponse> UpdateAsync(Guid id, UpdateAssetRequest request, CancellationToken cancellationToken = default)
     {
         var asset = await _assets.GetByIdAsync(id, cancellationToken)
@@ -67,6 +76,7 @@ public sealed class AssetService : IAssetService
         asset.SerialNumber = request.SerialNumber.Trim();
         asset.Description = request.Description?.Trim();
         asset.Status = (AssetStatus)request.Status;
+        asset.CategoryId = request.CategoryId;
         asset.UpdatedAt = DateTime.UtcNow;
 
         await _assets.SaveChangesAsync(cancellationToken);
@@ -74,6 +84,7 @@ public sealed class AssetService : IAssetService
         return _mapper.Map<AssetResponse>(asset);
     }
 
+    // Cihazı sistemden siler (Aslında IsDeleted = true yaparak Soft Delete uygular).
     public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var asset = await _assets.GetByIdAsync(id, cancellationToken)

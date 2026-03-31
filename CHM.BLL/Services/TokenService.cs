@@ -10,6 +10,7 @@ using System.Text;
 
 namespace CHM.BLL.Services;
 
+// JWT (JSON Web Token) kimlik doğrulama anahtarlarını oluşturan servis.
 public sealed class TokenService : ITokenService
 {
     private readonly JwtOptions _jwt;
@@ -19,6 +20,7 @@ public sealed class TokenService : ITokenService
         _jwt = jwtOptions.Value;
     }
 
+    // Başarılı bir giriş sonrası hem kısan ömürlü (Access) hem de uzun ömürlü (Refresh) token çiftini oluşturur.
     public TokenResponse CreateTokenPair(User user)
     {
         var now = DateTime.UtcNow;
@@ -49,6 +51,7 @@ public sealed class TokenService : ITokenService
         };
     }
 
+    // JWT (Access Token) üretir. İçerisinde (Payload) kullanıcının ID'sini, rollerini ve e-postasını taşır (Claims).
     private string CreateJwt(User user, DateTime expiresAt)
     {
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
@@ -79,6 +82,7 @@ public sealed class TokenService : ITokenService
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
+    // Veritabanında (RefreshTokens tablosunda) tutulmak üzere kriptografik olarak güvenli ve rastgele bir metin (Token) üretir.
     private static string GenerateRefreshToken()
     {
         // 64 bytes -> 86 chars base64 (approx); OK for storage
