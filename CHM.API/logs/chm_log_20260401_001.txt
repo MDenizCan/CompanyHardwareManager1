@@ -1,0 +1,351 @@
+2026-04-01 10:02:47.876 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.914 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.917 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.921 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.923 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.925 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.927 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.929 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.930 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.933 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.936 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.941 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.943 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.945 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.947 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.949 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:47.951 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 10:02:48.003 +03:00 [INF] User profile is available. Using 'C:\Users\forra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 10:02:48.040 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5075: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-04-01 10:02:48.056 +03:00 [FTL] Application terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5075: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at CHM.API.Program.Main(String[] args) in C:\Users\forra\APROGRAMMING\CompanyHardwareManager\CHM.API\Program.cs:line 136
+2026-04-01 16:16:29.449 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.486 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.490 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__roleName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[Name] = @__roleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.500 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.504 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.506 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.508 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.510 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.513 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.515 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.518 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__categoryName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AssetCategories] AS [a]
+        WHERE [a].[Name] = @__categoryName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.529 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.531 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.536 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.538 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.540 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__departmentName_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Departments] AS [d]
+        WHERE [d].[Name] = @__departmentName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.562 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[DeletedAt], [r].[IsDeleted], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-04-01 16:16:29.604 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserRoles] AS [u]
+        WHERE [u].[RoleId] = @__adminRole_Id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-01 16:16:29.660 +03:00 [INF] User profile is available. Using 'C:\Users\forra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 16:16:29.746 +03:00 [INF] Now listening on: http://localhost:5075
+2026-04-01 16:16:29.750 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 16:16:29.752 +03:00 [INF] Hosting environment: Development
+2026-04-01 16:16:29.753 +03:00 [INF] Content root path: C:\Users\forra\APROGRAMMING\CompanyHardwareManager\CHM.API
+2026-04-01 16:17:26.206 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5075/ - null null
+2026-04-01 16:17:26.235 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-04-01 16:17:26.268 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5075/ - 404 0 null 63.0769ms
+2026-04-01 16:17:26.276 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5075/, Response status code: 404

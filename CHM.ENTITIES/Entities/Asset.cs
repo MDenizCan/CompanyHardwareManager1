@@ -28,7 +28,7 @@ public class Asset : BaseEntity
     // Cihazın anlık durumu. Varsayılan olarak "Available" (Kullanıma hazır) atanır.
     public AssetStatus Status { get; set; } = AssetStatus.Available;
 
-    // Cihazın kategorisi (Laptop, Monitör, Telefon vb.) — FK → AssetCategory tablosu
+    // Cihazın kategorisi (Laptop, Monitör, Telefon vb.) — FK -> AssetCategory tablosu
     // Nullable: Eski/mevcut cihazların kategorisi olmayabilir, sonradan atanabilir.
     public Guid? CategoryId { get; set; }
     // Navigation Property: EF Core'un ilişkili kategori bilgisini (Include ile) getirmesi için kullanılır.

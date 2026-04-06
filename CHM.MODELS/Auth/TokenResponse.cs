@@ -11,4 +11,10 @@ public sealed class TokenResponse
     // Çok tehlikelidir, HTTP Only Cookielerde veya çok güvenli yerlerde saklanmalıdır.
     public string RefreshToken { get; set; } = null!;
     public DateTime RefreshTokenExpiresAt { get; set; }
+
+    // Kullanıcının temel bilgileri (Frontend tarafında yetki/rol kontrolleri veya gösterim için)
+    public Guid UserId { get; set; }
+    public string Username { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public List<string> Roles { get; set; } = new();
 }

@@ -30,4 +30,16 @@ public sealed class UserService : IUserService
         await _users.AssignRoleAsync(request.UserId, request.RoleName, cancellationToken);
         await _users.SaveChangesAsync(cancellationToken);
     }
+
+    public async Task RemoveRoleAsync(RemoveRoleRequest request, CancellationToken cancellationToken = default)
+    {
+        await _users.RemoveRoleAsync(request.UserId, request.RoleName, cancellationToken);
+        await _users.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        await _users.DeleteAsync(id, cancellationToken);
+        await _users.SaveChangesAsync(cancellationToken);
+    }
 }

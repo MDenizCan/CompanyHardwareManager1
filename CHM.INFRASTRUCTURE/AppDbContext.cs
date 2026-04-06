@@ -29,6 +29,9 @@ namespace CHM.INFRASTRUCTURE
 
             // GLOBAL QUERY FILTER: Tüm tablolara "sadece silinmemiş (IsDeleted == false) kayıtları getir" kuralı ekler.
             // Böylece repository'lerde her defasında Where(!IsDeleted) yazmak zorunda kalmayız.
+            // Eğer gerçekten (örneğin Admin panelinde silinenleri geri yüklemek için) o verileri görmek istersen şöyle yaparsın (Bunu mutlaka bir yere not et!):
+            // _context.Assets.IgnoreQueryFilters().ToListAsync();
+            // IgnoreQueryFilters() dersen, o az önceki otomatik WHERE IsDeleted = 0 filtresi devreden çıkar ve veritabanındaki TÜM (silinmiş-silinmemiş fark etmez) veriler sana gelir.
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
@@ -51,6 +54,7 @@ namespace CHM.INFRASTRUCTURE
 
             modelBuilder.Entity<Role>(b =>
             {
+                b.Property(x => x.Name).HasConversion<string>();
                 b.HasIndex(x => x.Name).IsUnique();
             });
 
@@ -64,6 +68,7 @@ namespace CHM.INFRASTRUCTURE
 
             modelBuilder.Entity<Asset>(b =>
             {
+                b.Property(x => x.Status).HasConversion<string>();
                 b.HasIndex(x => x.SerialNumber).IsUnique();
                 // Cihaz bir kategoriye bağlı olabilir (nullable FK)
                 b.HasOne(x => x.Category)
@@ -74,11 +79,13 @@ namespace CHM.INFRASTRUCTURE
 
             modelBuilder.Entity<AssetCategory>(b =>
             {
+                b.Property(x => x.Name).HasConversion<string>();
                 b.HasIndex(x => x.Name).IsUnique();
             });
 
             modelBuilder.Entity<Department>(b =>
             {
+                b.Property(x => x.Name).HasConversion<string>();
                 b.HasIndex(x => x.Name).IsUnique();
             });
 
@@ -101,6 +108,8 @@ namespace CHM.INFRASTRUCTURE
 
             modelBuilder.Entity<Request>(b =>
             {
+                b.Property(x => x.Type).HasConversion<string>();
+                b.Property(x => x.Status).HasConversion<string>();
                 b.HasOne(x => x.User).WithMany(x => x.Requests).HasForeignKey(x => x.UserId);
                 b.HasOne(x => x.Asset).WithMany(x => x.Requests).HasForeignKey(x => x.AssetId);
             });

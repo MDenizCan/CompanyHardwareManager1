@@ -14,12 +14,12 @@ public class MappingProfile : Profile
         // Asset (Entity) -> AssetResponse (DTO) Dönüşümü
         CreateMap<Asset, AssetResponse>()
             .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
-            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name : null));
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name.ToString() : null));
 
         // Asset (Entity) -> AssetListResponse (DTO) Dönüşümü
         CreateMap<Asset, AssetListResponse>()
             .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
-            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name : null));
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name.ToString() : null));
 
         // User (Entity) -> UserResponse (DTO) Dönüşümü
         CreateMap<CHM.ENTITIES.Entities.User, CHM.MODELS.User.UserResponse>()

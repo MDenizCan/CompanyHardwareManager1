@@ -76,7 +76,10 @@ public sealed class UserRepository : IUserRepository
     public async Task AddWithRoleAsync(User user, string roleName, CancellationToken cancellationToken = default)
     {
         // Önce veritabanından atanmak istenen rolün var olup olmadığına bakar.
-        var role = await _db.Roles.FirstOrDefaultAsync(r => r.Name == roleName, cancellationToken);
+        if (!Enum.TryParse<RoleType>(roleName, true, out var parsedRole))
+            throw new InvalidOperationException($"Invalid role '{roleName}'.");
+
+        var role = await _db.Roles.FirstOrDefaultAsync(r => r.Name == parsedRole, cancellationToken);
         if (role is null)
             throw new InvalidOperationException($"Role '{roleName}' not found. Seed roles first.");
 
@@ -104,7 +107,10 @@ public sealed class UserRepository : IUserRepository
         if (user is null)
             throw new InvalidOperationException($"Kullanıcı (ID: {userId}) bulunamadı.");
 
-        var role = await _db.Roles.FirstOrDefaultAsync(r => r.Name == roleName, cancellationToken);
+        if (!Enum.TryParse<RoleType>(roleName, true, out var parsedRole))
+            throw new InvalidOperationException($"Invalid role '{roleName}'.");
+
+        var role = await _db.Roles.FirstOrDefaultAsync(r => r.Name == parsedRole, cancellationToken);
         if (role is null)
             throw new InvalidOperationException($"'{roleName}' isminde bir rol bulunamadı. Lütfen Seed işlemini kontrol edin.");
 
@@ -119,6 +125,41 @@ public sealed class UserRepository : IUserRepository
                 User = user
             });
         }
+    }
+
+    // Mevcut bir kullanıcıdan belirtilen rolü kaldırır.
+    public async Task RemoveRoleAsync(Guid userId, string roleName, CancellationToken cancellationToken = default)
+    {
+        var user = await _db.Users
+            .Include(u => u.UserRoles)
+            .ThenInclude(ur => ur.Role)
+            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+
+        if (user is null)
+            throw new KeyNotFoundException($"Kullanıcı (ID: {userId}) bulunamadı.");
+
+        if (!Enum.TryParse<RoleType>(roleName, true, out var parsedRole))
+            throw new InvalidOperationException($"Geçersiz rol: '{roleName}'.");
+
+        var userRole = user.UserRoles.FirstOrDefault(ur => ur.Role.Name == parsedRole);
+        if (userRole is null)
+            throw new InvalidOperationException($"Kullanıcının '{roleName}' rolü bulunmuyor.");
+
+        // Kullanıcının en az bir rolü kalmalı
+        if (user.UserRoles.Count <= 1)
+            throw new InvalidOperationException("Kullanıcının en az bir rolü olmalıdır. Son rol kaldırılamaz.");
+
+        user.UserRoles.Remove(userRole);
+    }
+
+    // Kullanıcıyı veritabanından kalıcı olarak siler.
+    public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == id, cancellationToken);
+        if (user is null)
+            throw new KeyNotFoundException($"Kullanıcı (ID: {id}) bulunamadı.");
+
+        _db.Users.Remove(user);
     }
 
     public Task SaveChangesAsync(CancellationToken cancellationToken = default)

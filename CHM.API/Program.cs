@@ -113,7 +113,7 @@ namespace CHM.API
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<CHM.INFRASTRUCTURE.AppDbContext>();
-                DatabaseSeeder.SeedAsync(db).GetAwaiter().GetResult();
+                DatabaseSeeder.SeedAsync(db, CancellationToken.None).GetAwaiter().GetResult();
             }
 
             // Configure the HTTP request pipeline.

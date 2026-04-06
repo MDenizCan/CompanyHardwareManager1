@@ -35,7 +35,11 @@ public sealed class TokenService : ITokenService
             AccessToken = accessToken,
             AccessTokenExpiresAt = accessExpiresAt,
             RefreshToken = refreshToken,
-            RefreshTokenExpiresAt = refreshExpiresAt
+            RefreshTokenExpiresAt = refreshExpiresAt,
+            UserId = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            Roles = user.UserRoles.Select(ur => ur.Role.Name.ToString()).ToList()
         };
     }
 
@@ -66,7 +70,7 @@ public sealed class TokenService : ITokenService
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N"))
         };
 
-        foreach (var roleName in user.UserRoles.Select(ur => ur.Role.Name).Distinct(StringComparer.OrdinalIgnoreCase))
+        foreach (var roleName in user.UserRoles.Select(ur => ur.Role.Name.ToString()).Distinct(StringComparer.OrdinalIgnoreCase))
         {
             claims.Add(new Claim(ClaimTypes.Role, roleName));
         }

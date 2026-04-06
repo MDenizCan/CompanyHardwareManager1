@@ -17,6 +17,9 @@ public class User : BaseEntity
     // Kullanıcının hesabının aktif olup olmadığını belirtir. (Örn: İşten ayrıldıysa false yapılır).
     public bool IsActive { get; set; } = true;
 
+    // Kullanıcının pasif hale getirildiği tarih. (Otomatik silme takibi için).
+    public DateTime? DeactivatedAt { get; set; }
+
     // Kullanıcının ait olduğu departman — FK → Department tablosu
     // Nullable: Yeni kullanıcılar kayıt olduğunda henüz bir departmana atanmamış olabilir.
     public Guid? DepartmentId { get; set; }
