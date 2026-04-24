@@ -78,7 +78,7 @@ namespace CHM.API
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
-            builder.Services.AddScoped<IAssetService, AssetService>();
+            builder.Services.AddScoped<IAssetService, AssetServicev2>();
             builder.Services.AddScoped<IAssignmentService, AssignmentService>();
             builder.Services.AddScoped<IRequestService, RequestService>();
 
